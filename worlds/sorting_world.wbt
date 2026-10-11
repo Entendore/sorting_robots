@@ -1,0 +1,267 @@
+#VRML_SIM R2022a utf8
+
+WorldInfo {
+  basicTimeStep 32
+}
+
+Viewpoint {
+  orientation -0.3 0.55 0.78 1.06
+  position 2.7 2.3 2.7
+}
+
+TexturedBackground {
+}
+
+TexturedBackgroundLight {
+}
+
+RectangleArena {
+  floorSize 2 2
+  wallHeight 0.2
+}
+
+DEF RED_ZONE Solid {
+  translation 0.75 0.0015 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.3 0.3
+        transparency 0.85
+      }
+      geometry Box {
+        size 0.36 0.003 0.36
+      }
+    }
+  ]
+}
+
+DEF BLUE_ZONE Solid {
+  translation -0.75 0.0015 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.3 0.3 1
+        transparency 0.85
+      }
+      geometry Box {
+        size 0.36 0.003 0.36
+      }
+    }
+  ]
+}
+
+DEF GREEN_ZONE Solid {
+  translation 0 0.0015 -0.75
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.3 1 0.3
+        transparency 0.85
+      }
+      geometry Box {
+        size 0.36 0.003 0.36
+      }
+    }
+  ]
+}
+
+DEF RED_PANEL Solid {
+  translation 0.985 0.07 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+      }
+      geometry Box {
+        size 0.015 0.14 0.4
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.015 0.14 0.4
+  }
+}
+
+DEF BLUE_PANEL Solid {
+  translation -0.985 0.07 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+      }
+      geometry Box {
+        size 0.015 0.14 0.4
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.015 0.14 0.4
+  }
+}
+
+DEF GREEN_PANEL Solid {
+  translation 0 0.07 -0.985
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+      }
+      geometry Box {
+        size 0.4 0.14 0.015
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.4 0.14 0.015
+  }
+}
+
+DEF RED_BALL_1 Solid {
+  translation 0.15 0.05 -0.45
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 1 0 0 }
+      geometry Sphere { radius 0.05 }
+    }
+  ]
+  boundingObject Sphere { radius 0.05 }
+  physics Physics { density -1 mass 0.1 }
+}
+
+DEF RED_BALL_2 Solid {
+  translation -0.2 0.05 -0.15
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 1 0 0 }
+      geometry Sphere { radius 0.05 }
+    }
+  ]
+  boundingObject Sphere { radius 0.05 }
+  physics Physics { density -1 mass 0.1 }
+}
+
+DEF RED_BALL_3 Solid {
+  translation 0.35 0.05 0.3
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 1 0 0 }
+      geometry Sphere { radius 0.05 }
+    }
+  ]
+  boundingObject Sphere { radius 0.05 }
+  physics Physics { density -1 mass 0.1 }
+}
+
+DEF BLUE_BALL_1 Solid {
+  translation -0.15 0.05 0.45
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0 0 1 }
+      geometry Sphere { radius 0.05 }
+    }
+  ]
+  boundingObject Sphere { radius 0.05 }
+  physics Physics { density -1 mass 0.1 }
+}
+
+DEF BLUE_BALL_2 Solid {
+  translation 0.2 0.05 0.15
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0 0 1 }
+      geometry Sphere { radius 0.05 }
+    }
+  ]
+  boundingObject Sphere { radius 0.05 }
+  physics Physics { density -1 mass 0.1 }
+}
+
+DEF BLUE_BALL_3 Solid {
+  translation -0.35 0.05 -0.3
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0 0 1 }
+      geometry Sphere { radius 0.05 }
+    }
+  ]
+  boundingObject Sphere { radius 0.05 }
+  physics Physics { density -1 mass 0.1 }
+}
+
+DEF GREEN_BALL_1 Solid {
+  translation 0.45 0.05 -0.35
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0 1 0 }
+      geometry Sphere { radius 0.05 }
+    }
+  ]
+  boundingObject Sphere { radius 0.05 }
+  physics Physics { density -1 mass 0.1 }
+}
+
+DEF GREEN_BALL_2 Solid {
+  translation -0.5 0.05 0.3
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0 1 0 }
+      geometry Sphere { radius 0.05 }
+    }
+  ]
+  boundingObject Sphere { radius 0.05 }
+  physics Physics { density -1 mass 0.1 }
+}
+
+DEF GREEN_BALL_3 Solid {
+  translation 0 0.05 0
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0 1 0 }
+      geometry Sphere { radius 0.05 }
+    }
+  ]
+  boundingObject Sphere { radius 0.05 }
+  physics Physics { density -1 mass 0.1 }
+}
+
+# generalization probe: no zone exists for orange (see README).
+# Comment this node out for a clean unseen-colour experiment.
+DEF ORANGE_BALL_1 Solid {
+  translation 0 0.05 0.5
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 1 0.5 0 }
+      geometry Sphere { radius 0.05 }
+    }
+  ]
+  boundingObject Sphere { radius 0.05 }
+  physics Physics { density -1 mass 0.1 }
+}
+
+DEF EPUCK_1 E-puck {
+  translation -0.5 0 0.5
+  rotation 0 1 0 0.785
+  name "e-puck 1"
+  controller "sorting_robot"
+  supervisor TRUE
+  slot [
+    E-puckCamera {
+      width 64
+      height 64
+    }
+  ]
+}
+
+DEF EPUCK_2 E-puck {
+  translation 0.5 0 -0.5
+  rotation 0 1 0 -2.356
+  name "e-puck 2"
+  controller "sorting_robot"
+  supervisor TRUE
+  slot [
+    E-puckCamera {
+      width 64
+      height 64
+    }
+  ]
+}

@@ -1,0 +1,461 @@
+#VRML_SIM R2022a utf8
+
+WorldInfo {
+  basicTimeStep 32
+}
+
+Viewpoint {
+  orientation -0.35 0.6 0.72 1.05
+  position 1.6 1.6 2.3
+}
+
+TexturedBackground {
+}
+
+TexturedBackgroundLight {
+}
+
+RectangleArena {
+  floorSize 3 3
+  wallHeight 0.05
+}
+
+DEF BELT Solid {
+  translation -0.5 0.05 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.22 0.22 0.26
+        roughness 0.5
+      }
+      geometry Box {
+        size 1.2 0.1 0.3
+      }
+    }
+  ]
+  boundingObject Box {
+    size 1.2 0.1 0.3
+  }
+  name "belt"
+}
+
+DEF RED_BIN Solid {
+  translation 0.5 0 0.42
+  children [
+    Transform {
+      translation 0 0.006 0
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 1 0.25 0.25 }
+          geometry Box { size 0.18 0.012 0.18 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.087 0.05 0
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 1 0.35 0.35 }
+          geometry Box { size 0.006 0.088 0.18 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.087 0.05 0
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 1 0.35 0.35 }
+          geometry Box { size 0.006 0.088 0.18 }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0.05 0.087
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 1 0.35 0.35 }
+          geometry Box { size 0.18 0.088 0.006 }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0.05 -0.087
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 1 0.35 0.35 }
+          geometry Box { size 0.18 0.088 0.006 }
+        }
+      ]
+    }
+  ]
+  boundingObject Group {
+    children [
+      Transform { translation 0 0.006 0 children [ Box { size 0.18 0.012 0.18 } ] }
+      Transform { translation 0.087 0.05 0 children [ Box { size 0.006 0.088 0.18 } ] }
+      Transform { translation -0.087 0.05 0 children [ Box { size 0.006 0.088 0.18 } ] }
+      Transform { translation 0 0.05 0.087 children [ Box { size 0.18 0.088 0.006 } ] }
+      Transform { translation 0 0.05 -0.087 children [ Box { size 0.18 0.088 0.006 } ] }
+    ]
+  }
+  name "red bin"
+}
+
+DEF BLUE_BIN Solid {
+  translation 0.5 0 -0.42
+  children [
+    Transform {
+      translation 0 0.006 0
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.25 0.3 1 }
+          geometry Box { size 0.18 0.012 0.18 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.087 0.05 0
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.35 0.4 1 }
+          geometry Box { size 0.006 0.088 0.18 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.087 0.05 0
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.35 0.4 1 }
+          geometry Box { size 0.006 0.088 0.18 }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0.05 0.087
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.35 0.4 1 }
+          geometry Box { size 0.18 0.088 0.006 }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0.05 -0.087
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.35 0.4 1 }
+          geometry Box { size 0.18 0.088 0.006 }
+        }
+      ]
+    }
+  ]
+  boundingObject Group {
+    children [
+      Transform { translation 0 0.006 0 children [ Box { size 0.18 0.012 0.18 } ] }
+      Transform { translation 0.087 0.05 0 children [ Box { size 0.006 0.088 0.18 } ] }
+      Transform { translation -0.087 0.05 0 children [ Box { size 0.006 0.088 0.18 } ] }
+      Transform { translation 0 0.05 0.087 children [ Box { size 0.18 0.088 0.006 } ] }
+      Transform { translation 0 0.05 -0.087 children [ Box { size 0.18 0.088 0.006 } ] }
+    ]
+  }
+  name "blue bin"
+}
+
+DEF SCRAP_BIN Solid {
+  translation 0.75 0 0
+  children [
+    Transform {
+      translation 0 0.006 0
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.5 0.5 0.55 }
+          geometry Box { size 0.18 0.012 0.18 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.087 0.05 0
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.6 0.6 0.65 }
+          geometry Box { size 0.006 0.088 0.18 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.087 0.05 0
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.6 0.6 0.65 }
+          geometry Box { size 0.006 0.088 0.18 }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0.05 0.087
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.6 0.6 0.65 }
+          geometry Box { size 0.18 0.088 0.006 }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0.05 -0.087
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.6 0.6 0.65 }
+          geometry Box { size 0.18 0.088 0.006 }
+        }
+      ]
+    }
+  ]
+  boundingObject Group {
+    children [
+      Transform { translation 0 0.006 0 children [ Box { size 0.18 0.012 0.18 } ] }
+      Transform { translation 0.087 0.05 0 children [ Box { size 0.006 0.088 0.18 } ] }
+      Transform { translation -0.087 0.05 0 children [ Box { size 0.006 0.088 0.18 } ] }
+      Transform { translation 0 0.05 0.087 children [ Box { size 0.18 0.088 0.006 } ] }
+      Transform { translation 0 0.05 -0.087 children [ Box { size 0.18 0.088 0.006 } ] }
+    ]
+  }
+  name "scrap bin"
+}
+
+DEF BLOCK_R1 Solid {
+  translation -1.0 0.14 0
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 1 0.15 0.15 }
+      geometry Box { size 0.07 0.07 0.07 }
+    }
+    Connector {
+      translation 0 0.036 0
+      type "symmetric"
+      autoLock FALSE
+      unLock TRUE
+    }
+  ]
+  boundingObject Box { size 0.07 0.07 0.07 }
+  physics Physics {
+    density -1
+    mass 0.06
+  }
+}
+
+DEF BLOCK_B1 Solid {
+  translation -0.8 0.14 0
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.15 0.2 1 }
+      geometry Box { size 0.07 0.07 0.07 }
+    }
+    Connector {
+      translation 0 0.036 0
+      type "symmetric"
+      autoLock FALSE
+      unLock TRUE
+    }
+  ]
+  boundingObject Box { size 0.07 0.07 0.07 }
+  physics Physics {
+    density -1
+    mass 0.06
+  }
+}
+
+DEF BLOCK_R2 Solid {
+  translation -0.6 0.14 0
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 1 0.15 0.15 }
+      geometry Box { size 0.07 0.07 0.07 }
+    }
+    Connector {
+      translation 0 0.036 0
+      type "symmetric"
+      autoLock FALSE
+      unLock TRUE
+    }
+  ]
+  boundingObject Box { size 0.07 0.07 0.07 }
+  physics Physics {
+    density -1
+    mass 0.06
+  }
+}
+
+DEF BLOCK_B2 Solid {
+  translation -0.4 0.14 0
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.15 0.2 1 }
+      geometry Box { size 0.07 0.07 0.07 }
+    }
+    Connector {
+      translation 0 0.036 0
+      type "symmetric"
+      autoLock FALSE
+      unLock TRUE
+    }
+  ]
+  boundingObject Box { size 0.07 0.07 0.07 }
+  physics Physics {
+    density -1
+    mass 0.06
+  }
+}
+
+# worn/defective parts: 5 cm instead of 7 cm (the gauges see only height)
+DEF BLOCK_RB Solid {
+  translation -0.2 0.13 0
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.55 0.12 0.1 }
+      geometry Box { size 0.05 0.05 0.05 }
+    }
+    Connector {
+      translation 0 0.026 0
+      type "symmetric"
+      autoLock FALSE
+      unLock TRUE
+    }
+  ]
+  boundingObject Box { size 0.05 0.05 0.05 }
+  physics Physics {
+    density -1
+    mass 0.04
+  }
+}
+
+DEF BLOCK_BB Solid {
+  translation 0.0 0.13 0
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.15 0.25 0.65 }
+      geometry Box { size 0.05 0.05 0.05 }
+    }
+    Connector {
+      translation 0 0.026 0
+      type "symmetric"
+      autoLock FALSE
+      unLock TRUE
+    }
+  ]
+  boundingObject Box { size 0.05 0.05 0.05 }
+  physics Physics {
+    density -1
+    mass 0.04
+  }
+}
+
+DEF UR_ARM UR5e {
+  translation 0.45 0 0
+  rotation 0 1 0 0
+  name "ur5e sorter"
+  controller "ur5e_sorter"
+  supervisor TRUE
+  toolSlot [
+    Robotiq3fGripper {
+    }
+  ]
+}
+
+DEF QUALITY_MAST Robot {
+  translation -0.05 0 0.25
+  name "quality mast"
+  controller "quality_mast"
+  children [
+    Transform {
+      translation 0 0.25 0
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.3 0.3 0.35 }
+          geometry Box { size 0.03 0.5 0.03 }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0.485 -0.125
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.3 0.3 0.35 }
+          geometry Box { size 0.03 0.03 0.25 }
+        }
+      ]
+    }
+    Transform {
+      translation -0.018 0.455 -0.25
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.1 0.1 0.1 }
+          geometry Cylinder { height 0.03 radius 0.014 }
+        }
+      ]
+    }
+    Transform {
+      translation 0.018 0.455 -0.25
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.25 0.15 0.1 }
+          geometry Cylinder { height 0.03 radius 0.014 }
+        }
+      ]
+    }
+    DistanceSensor {
+      translation -0.018 0.44 -0.25
+      rotation 0 0 1 -1.5708
+      name "height_sensor_a"
+      type "generic"
+      aperture 0.03
+      lookupTable [ 0.02 0.02 1, 0.6 0.6 1 ]
+    }
+    DistanceSensor {
+      translation 0.018 0.44 -0.25
+      rotation 0 0 1 -1.5708
+      name "height_sensor_b"
+      type "generic"
+      aperture 0.03
+      lookupTable [ 0.02 0.02 1, 0.6 0.6 1 ]
+    }
+    LED {
+      translation 0 0.53 -0.24
+      name "beacon_green"
+      color [ 0 1 0 ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0 1 0 }
+          geometry Cylinder { height 0.03 radius 0.016 }
+        }
+      ]
+    }
+    LED {
+      translation 0.035 0.53 -0.24
+      name "beacon_yellow"
+      color [ 1 1 0 ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 1 1 0 }
+          geometry Cylinder { height 0.03 radius 0.016 }
+        }
+      ]
+    }
+    LED {
+      translation -0.035 0.53 -0.24
+      name "beacon_red"
+      color [ 1 0 0 ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 1 0 0 }
+          geometry Cylinder { height 0.03 radius 0.016 }
+        }
+      ]
+    }
+  ]
+  boundingObject Group {
+    children [
+      Transform { translation 0 0.25 0 children [ Box { size 0.03 0.5 0.03 } ] }
+      Transform { translation 0 0.485 -0.125 children [ Box { size 0.03 0.03 0.25 } ] }
+    ]
+  }
+}
